@@ -25,7 +25,6 @@ from registry_review_mcp.utils.checklist import (
     validate_program_guide_url,
 )
 
-
 # ---------------------------------------------------------------------------
 # Bundled checklist exposes the URL
 # ---------------------------------------------------------------------------

@@ -28,7 +28,6 @@ from pydantic import ValidationError
 from registry_review_mcp.models.schemas import Checklist, Requirement, RequirementMapping
 from registry_review_mcp.utils.checklist import load_checklist
 
-
 # ---------------------------------------------------------------------------
 # Constants describing what Becca's V2 template said
 # ---------------------------------------------------------------------------
