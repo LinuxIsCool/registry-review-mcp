@@ -69,7 +69,7 @@ async def create_session(
     Returns:
         Session creation result with session_id and metadata
     """
-    from ..utils.checklist import load_checklist
+    from ..utils.checklist import load_checklist, validate_program_guide_url
 
     # Validate inputs via Pydantic
     project_metadata = ProjectMetadata(
@@ -87,11 +87,18 @@ async def create_session(
     session_id = generate_session_id()
     now = datetime.now(timezone.utc)
 
-    # Load checklist requirements count (filtered by scope if provided)
+    # Load checklist requirements count (filtered by scope if provided).
+    # Also soft-validate the canonical methodology page URL so reviewers
+    # know whether the published source has moved -- warning only, never
+    # aborts session creation.
     requirements_count = 0
+    program_guide_url: str | None = None
+    program_guide_warning: str | None = None
     try:
         checklist_data = load_checklist(methodology, scope)
         requirements_count = len(checklist_data.get("requirements", []))
+        program_guide_url = checklist_data.get("program_guide_url")
+        program_guide_warning = validate_program_guide_url(program_guide_url)
     except FileNotFoundError:
         pass
 
@@ -115,7 +122,7 @@ async def create_session(
     state_manager.write_json("documents.json", {"documents": []})
     state_manager.write_json("findings.json", {"findings": []})
 
-    return {
+    response: dict[str, Any] = {
         "session_id": session_id,
         "project_name": project_name,
         "created_at": now.isoformat(),
@@ -123,6 +130,11 @@ async def create_session(
         "requirements_total": requirements_count,
         "message": f"Session created successfully for project: {project_name}",
     }
+    if program_guide_url:
+        response["program_guide_url"] = program_guide_url
+    if program_guide_warning:
+        response["program_guide_warning"] = program_guide_warning
+    return response
 
 
 async def load_session(session_id: str) -> dict[str, Any]:

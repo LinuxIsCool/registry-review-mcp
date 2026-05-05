@@ -4,9 +4,12 @@
   "version": "1.2.2",
   "protocol": "GHG Benefits in Managed Crop and Grassland Systems",
   "program_guide_version": "1.1",
+  "program_guide_url": "https://www.registry.regen.network/methodology/soil-organic-carbon-estimation-in-regenerative-cropping-managed-grassland-ecosystems",
+  "checklist_template_version": "v2-2026-04-28",
+  "checklist_template_source": "[Template] V2 Project Registration Registry Agent Review- C06 Ecometric.docx (Becca, 2026-04-28)",
   "requirements": [
     {
-      "requirement_id": "REQ-001",
+      "requirement_id": "C06-REGISTRATION-ML-001",
       "category": "General",
       "requirement_text": "Projects shall apply the latest version of the applicable credit class and methodology",
       "source": "Program Guide, Section 8.1.3",
@@ -16,29 +19,49 @@
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-002",
-      "category": "Land Tenure",
-      "requirement_text": "Provide evidence of legal land tenure and control over the project area for the crediting period. In the case of leased land this must include landowner approval",
-      "source": "Program Guide, Section 8.2; Credit Class, Section 3.4, 3.5",
-      "accepted_evidence": "Deeds, lease agreements, land use agreements, or legal attestations confirming long-term control and ownership",
+      "requirement_id": "C06-REGISTRATION-ML-002",
+      "category": "Project Plan",
+      "requirement_text": "Submit a Project Plan that defines and evidences the Project Area(s), Project Activity, Project Eligibility, and Project Rules and Regulations",
+      "source": "Credit Class, Section 4.3",
+      "accepted_evidence": "Completed Project Plan template containing all required sections and supporting information",
       "mandatory": true,
-      "validation_type": "cross_document",
-      "scope": "farm"
+      "validation_type": "document_presence",
+      "scope": "meta"
     },
     {
-      "requirement_id": "REQ-003",
-      "category": "Project Area",
-      "requirement_text": "Demonstrate the property was not converted from natural ecosystems in the ten years before the project start date",
-      "source": "Program Guide, Section 8.3.1, Methodology, Section 2.1",
-      "accepted_evidence": "Timestamped image from sentinel color composite, NDVI, Google earth historical data, legal proof or attestation of land use history or similarly rigorous proof",
+      "requirement_id": "C06-REGISTRATION-ML-003",
+      "category": "Ecosystem Type",
+      "requirement_text": "Ecosystem Type(s) must be categorized as croplands, grasslands, pastureland, and shrubland as defined in the RND Taxonomy. For Aggregate Projects, each site must demonstrate compliance with this requirement",
+      "source": "Credit Class, Section 3.1",
+      "accepted_evidence": "Description within the Project Plan supported by available datasets (e.g. soil maps, climate zone classification, land-use/land-cover data)",
       "mandatory": true,
       "validation_type": "document_presence",
       "scope": "farm"
     },
     {
-      "requirement_id": "REQ-004",
+      "requirement_id": "C06-REGISTRATION-ML-004",
+      "category": "Land Tenure",
+      "requirement_text": "Provide evidence of legal land tenure and control over the project area during the crediting period. In the case of leased land this must include landowner approval. For Aggregate Projects, each site must demonstrate compliance with this requirement",
+      "source": "Program Guide, Section 8.2; Credit Class, Section 3.4, 3.5",
+      "accepted_evidence": "Deeds, lease agreements, land use agreements, or legal attestations confirming long-term control and ownership, such as National or regional agricultural land registries (e.g. LPIS, PPA or equivalent)",
+      "mandatory": true,
+      "validation_type": "cross_document",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-005",
       "category": "Project Area",
-      "requirement_text": "Clearly define geographic boundaries of the project area with clear demarcation of areas eligible or ineligible for credit estimation",
+      "requirement_text": "Demonstrate the property was not converted from natural ecosystems in the 10 years before the project start date. For Aggregate Projects, each site must demonstrate compliance with this requirement",
+      "source": "Program Guide, Section 8.3.1; Methodology; Credit Class, Section 3.1",
+      "accepted_evidence": "Satellite imagery analysis (e.g. Sentinel, Google Earth historical imagery), land-use or land-cover datasets, national agricultural land registries (e.g. LPIS, PPA), farm management records, legal documentation, or similarly rigorous and verifiable evidence demonstrating land-use history",
+      "mandatory": true,
+      "validation_type": "document_presence",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-006",
+      "category": "Project Area",
+      "requirement_text": "Clearly define geographic boundaries of the project area with clear demarcation of areas eligible or ineligible for credit issuance",
       "source": "Program Guide, Section 8.3.2",
       "accepted_evidence": "GIS shapefiles and maps, with delineations of eligible and ineligible land",
       "mandatory": true,
@@ -46,7 +69,57 @@
       "scope": "farm"
     },
     {
-      "requirement_id": "REQ-005",
+      "requirement_id": "C06-REGISTRATION-ML-007",
+      "category": "Aggregate Project",
+      "requirement_text": "State that the project is an Aggregate Project and justify registration of the aggregated project in the Project Plan",
+      "source": "Program Guide, Section 8.10.1",
+      "accepted_evidence": "Project Plan description stating that the project is an Aggregate Project and providing justification for the grouped project structure",
+      "mandatory": true,
+      "validation_type": "document_presence",
+      "scope": "meta"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-008",
+      "category": "Aggregate Project",
+      "requirement_text": "State the bioregion and, if appropriate, national boundary basis of the aggregation",
+      "source": "Credit Class, Section 4.2",
+      "accepted_evidence": "Project Plan description of the aggregation basis including the bioregion and, where applicable, national boundary",
+      "mandatory": true,
+      "validation_type": "document_presence",
+      "scope": "meta"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-009",
+      "category": "Aggregate Project",
+      "requirement_text": "Demonstrate that grouped Sites are in the same pre-defined climatic or geographic region and are as homogeneous as possible in soil, ecology, and land management practice",
+      "source": "Program Guide, Section 8.10.1; Credit Class, Section 4.2",
+      "accepted_evidence": "Project Plan description of grouping criteria and homogeneity rationale supported by Site-level location, ecological, soil, and land management information",
+      "mandatory": true,
+      "validation_type": "cross_document",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-010",
+      "category": "Aggregate Project",
+      "requirement_text": "Ensure all Sites remain individually identifiable within the aggregate project",
+      "source": "Credit Class, Section 4.2",
+      "accepted_evidence": "Project Plan or supplementary documentation showing each Site has a unique identifier and can be separately traced within the aggregate",
+      "mandatory": true,
+      "validation_type": "structured_field",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-011",
+      "category": "Aggregate Project",
+      "requirement_text": "Ensure all Sites are subject to standard monitoring requirements, with no extrapolation between Sites",
+      "source": "Credit Class, Section 4.2",
+      "accepted_evidence": "Project Plan or monitoring design showing that each Site is treated as individually subject to standard monitoring requirements and that no extrapolation is applied between Sites",
+      "mandatory": true,
+      "validation_type": "document_presence",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-012",
       "category": "Project Boundary",
       "requirement_text": "Describe the project boundary, including relevant GHG sinks, sources, reservoirs, and other relevant ecological indicators (if applicable)",
       "source": "Program Guide, Section 8.4.1",
@@ -56,7 +129,7 @@
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-006",
+      "requirement_id": "C06-REGISTRATION-ML-013",
       "category": "Project Ownership",
       "requirement_text": "The project proponent must stipulate the ownership of credits and how they are distributed among stakeholders",
       "source": "Program Guide, Section 8.5.1",
@@ -66,69 +139,79 @@
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-007",
+      "requirement_id": "C06-REGISTRATION-ML-014",
       "category": "Project Start Date",
-      "requirement_text": "Project must stipulate the Project Start Date and justify how it meets the eligibility requirements",
-      "source": "Program Guide, Section 8.6",
-      "accepted_evidence": "Explicit mention of the name, start date, and duration of the project in Project Plan",
+      "requirement_text": "Project must stipulate the Project Start Date and justify how it meets the eligibility requirements. If the Project Start Date precedes registration, justify how eligibility and required data conditions were met before registration. The Project Proponent must demonstrate clear historical records to that effect and justify how eligibility requirements are met. For aggregated projects, Project Start Date may vary by site. Individual sites must define their own Project Start Date",
+      "source": "Program Guide, Section 8.6; Credit Class, Section 3.7",
+      "accepted_evidence": "Explicit definition of the Project Start Date in the Project Plan",
+      "mandatory": true,
+      "validation_type": "date_alignment",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-015",
+      "category": "Crediting Period",
+      "requirement_text": "Stipulate the Crediting Period in the Project Plan. For this Credit Class the Crediting Period is 10 years, with the option to renew. In aggregated projects, sites may vary in their crediting period. Sites added after the project registration date must maintain a 10 year crediting period. Individual sites must define their own Project Start Date",
+      "source": "Program Guide, Section 8.7.2; Credit Class, Section 3.7",
+      "accepted_evidence": "Explicit definition of the Crediting Period in the Project Plan",
       "mandatory": true,
       "validation_type": "structured_field",
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-008",
-      "category": "Ecosystem Type",
-      "requirement_text": "Classification: Identify and classify the ecosystem being restored or managed, with details on vegetation types, soil characteristics, and climate zone",
-      "source": "Credit Class, Section 3",
-      "accepted_evidence": "Ecological assessment reports detailing ecosystem classification, including types of vegetation, soil, and climate characteristics",
-      "mandatory": true,
-      "validation_type": "document_presence",
-      "scope": "meta"
-    },
-    {
-      "requirement_id": "REQ-009",
-      "category": "Ecosystem Type",
-      "requirement_text": "Conditions of applicability: Project area ecosystem type may not change within 5 years prior to project start state",
-      "source": "Credit Class, Section 3.2",
-      "accepted_evidence": "Provide proof of land use for a 5-year period preceding project registration in the Project Plan and evidenced by farm-management records",
+      "requirement_id": "C06-REGISTRATION-ML-016",
+      "category": "Additionality",
+      "requirement_text": "Legally required practices are not accepted. For Aggregate Projects, each site must document proof of compliance with the requirement",
+      "source": "Credit Class, Section 5.1",
+      "accepted_evidence": "Regulatory analysis, legal or policy review, applicable law or program requirement records, Project Plan justification showing the activity is not legally required, and site-level documentation confirming the same for each Site",
       "mandatory": true,
       "validation_type": "document_presence",
       "scope": "farm"
     },
     {
-      "requirement_id": "REQ-010",
-      "category": "Crediting Period",
-      "requirement_text": "Define the crediting period and ensure compliance with credit class rules, which allows for a 10 year crediting period with option to renew",
-      "source": "Program Guide, Section 8.7.2; Credit Class, Section 3.7",
-      "accepted_evidence": "Statement of crediting period length",
+      "requirement_id": "C06-REGISTRATION-ML-017",
+      "category": "Additionality",
+      "requirement_text": "Demonstrate the project activity results in carbon storage above business as usual. For Aggregate Projects, each site must document proof of compliance with the requirement",
+      "source": "Credit Class, Section 5.1",
+      "accepted_evidence": "Baseline or business-as-usual comparison, modeled or measured carbon outcomes, management practice comparison, and site-level records demonstrating carbon storage above business as usual for each Site",
       "mandatory": true,
-      "validation_type": "structured_field",
-      "scope": "meta"
+      "validation_type": "cross_document",
+      "scope": "farm"
     },
     {
-      "requirement_id": "REQ-011",
-      "category": "GHG Accounting",
-      "requirement_text": "Additionality: prove that additionality test has been undertaken using one of the listed tests",
+      "requirement_id": "C06-REGISTRATION-ML-018",
+      "category": "Additionality",
+      "requirement_text": "Demonstrate the project activity has a reasonable expectation for carbon dioxide drawdown. For Aggregate Projects, each site must document proof of compliance with the requirement",
       "source": "Credit Class, Section 5.1",
-      "accepted_evidence": "Proof of additionality, either project or performance based",
+      "accepted_evidence": "Project Plan justification, scientific literature, methodology-based quantification approach, modeled or measured carbon sequestration estimates, and site-level evidence showing a reasonable expectation of carbon dioxide draw down for each Site",
       "mandatory": true,
       "validation_type": "document_presence",
-      "scope": "meta"
+      "scope": "farm"
     },
     {
-      "requirement_id": "REQ-012",
-      "category": "GHG Accounting",
-      "requirement_text": "Leakage: Demonstrate that leakage is >10% reduction in baseline yield",
+      "requirement_id": "C06-REGISTRATION-ML-019",
+      "category": "Leakage",
+      "requirement_text": "Report 5-year rolling average yield at registration and each monitoring round. Any reduction in monitoring-period yield greater than 10% relative to the 5-year rolling average, or 10% or more below the regional average for that crop type where climatic conditions reduce regional yield, must be reported as leakage. For Aggregate Projects, each site must report its 5-year rolling average and document any reductions above 10%",
       "source": "Credit Class, Section 5.2",
-      "accepted_evidence": "Included in annual report of crop yields",
+      "accepted_evidence": "Historic yield records for the 5-year rolling average, registration and monitoring-round yield records, annual project reports, regional yield comparison data where applicable, leakage calculations, and site-level yield documentation for each Site",
       "mandatory": true,
       "validation_type": "structured_field",
-      "scope": "meta"
+      "scope": "farm"
     },
     {
-      "requirement_id": "REQ-013",
-      "category": "GHG Accounting",
-      "requirement_text": "Permanence Period: the project shall have a 10-year permanence period",
+      "requirement_id": "C06-REGISTRATION-ML-020",
+      "category": "Leakage",
+      "requirement_text": "Projects must maintain the same land use during the Project Period. For Aggregate Projects, Project Periods might vary between sites. Each site must demonstrate maintained land use during its own Project Period",
+      "source": "Credit Class, Section 5.2",
+      "accepted_evidence": "Project Plan land-use description, land-use or land-cover records, satellite imagery, farm management records, field histories, and site-level documentation demonstrating maintained land use throughout each Site's Project Period",
+      "mandatory": true,
+      "validation_type": "cross_document",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-021",
+      "category": "Permanence Period",
+      "requirement_text": "The project shall have a 10-year permanence period. For Aggregate Projects, Project Periods might vary between sites. Each site must demonstrate maintained land use during its own Permanence Period",
       "source": "Credit Class, Section 5.3",
       "accepted_evidence": "Explicit permanence period duration in the Project Plan",
       "mandatory": true,
@@ -136,77 +219,37 @@
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-014",
+      "requirement_id": "C06-REGISTRATION-ML-022",
       "category": "Regulatory Compliance",
-      "requirement_text": "Provide attestation of regulatory compliance demonstrating the project is materially compliant to all laws, regulations, and other legally binding mandates directly related to project activities",
+      "requirement_text": "Provide attestation of regulatory compliance demonstrating the project is materially compliant to all laws, regulations, and other legally binding mandates directly related to project activities. For Aggregate Projects, each site must demonstrate compliance with this requirement",
       "source": "Program Guide, Section 8.8",
       "accepted_evidence": "Documentation of all relevant laws, regulations, or other legally binding mandates directly related to Project Activities and indications of where Project Activities violate compliance",
       "mandatory": true,
       "validation_type": "document_presence",
-      "scope": "meta"
+      "scope": "farm"
     },
     {
-      "requirement_id": "REQ-015",
+      "requirement_id": "C06-REGISTRATION-ML-023",
       "category": "Registration on Other Registries",
-      "requirement_text": "Project Proponents must disclose if they have applied, been listed, registered, or issued credits under another registry, or if they have known plans to apply in the future",
+      "requirement_text": "Project Proponents must disclose if they have applied, been listed, registered, or issued credits under another registry, or if they have known plans to apply in the future. For Aggregate Projects, each site must demonstrate compliance with this requirement",
       "source": "Program Guide, Sections 8.9.1, 8.9.2",
-      "accepted_evidence": "Official documentation from other registries detailing the project status, issued credits, or correspondence regarding approvals or rejections",
+      "accepted_evidence": "Official documentation from other registries detailing the project status, issued credits, or correspondence regarding approvals or rejections. If no prior or parallel registration exists, a clear disclosure statement or attestation in the Project Plan is sufficient",
       "mandatory": true,
       "validation_type": "document_presence",
-      "scope": "meta"
+      "scope": "farm"
     },
     {
-      "requirement_id": "REQ-016",
-      "category": "Project Plan Deviations",
-      "requirement_text": "Project Plan deviations must provide evidence that the proposed deviation meets the conservativeness standards of the Credit Protocol",
-      "source": "Program Guide, Section 8.12.2",
-      "accepted_evidence": "Statement in the Project Plan of proposed deviation",
-      "mandatory": false,
-      "validation_type": "manual",
-      "scope": "meta"
-    },
-    {
-      "requirement_id": "REQ-017",
-      "category": "Monitoring Plan",
-      "requirement_text": "Provide a detailed plan for ongoing monitoring, including indicators, methods, and responsibilities",
-      "source": "Methodology, Section 5.1",
-      "accepted_evidence": "Monitoring schedules, soil sampling protocols, remote sensing details, and monitoring responsibility assignments",
-      "mandatory": true,
-      "validation_type": "document_presence",
-      "scope": "meta"
-    },
-    {
-      "requirement_id": "REQ-018",
-      "category": "Risk Management",
-      "requirement_text": "Provide buffer pool contributions of each issuance of 20%",
-      "source": "Credit Class, Section 5.4",
-      "accepted_evidence": "Buffer pool allocation. For final permanence period monitoring, a buffer pool report is required",
-      "mandatory": true,
-      "validation_type": "structured_field",
-      "scope": "meta"
-    },
-    {
-      "requirement_id": "REQ-019",
-      "category": "Safeguards",
-      "requirement_text": "Environmental, socio-economic safeguards: Project Proponents must identify and address any negative environmental and socio-economic impacts of Project Activities and engage with local stakeholders to mitigate them",
-      "source": "Program Guide, Section 8.11.1",
-      "accepted_evidence": "Description of safeguard activities in Project Plan, impact reports, mitigation strategies and agreements",
-      "mandatory": true,
-      "validation_type": "document_presence",
-      "scope": "meta"
-    },
-    {
-      "requirement_id": "REQ-020",
+      "requirement_id": "C06-REGISTRATION-ML-024",
       "category": "Safeguards",
       "requirement_text": "No Net Harm: detail any potential negative socio-economic and environmental impacts of the project and the steps taken to mitigate them",
       "source": "Program Guide, Section 8.11.1",
-      "accepted_evidence": "Documentation of conflict resolution, mitigation plans, grievance redresses",
+      "accepted_evidence": "Documentation of conflict resolution, mitigation plans, grievance redresses. This section may reference the same Project Plan content used to demonstrate safeguards, where applicable",
       "mandatory": true,
       "validation_type": "document_presence",
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-021",
+      "requirement_id": "C06-REGISTRATION-ML-025",
       "category": "Safeguards",
       "requirement_text": "Local Stakeholder Consultation: Project Proponent must indicate how local stakeholders were identified and consulted prior to project implementation",
       "source": "Program Guide, Section 8.11.2",
@@ -216,7 +259,7 @@
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-022",
+      "requirement_id": "C06-REGISTRATION-ML-026",
       "category": "Safeguards",
       "requirement_text": "Environmental Impact: Project Proponent must indicate if environmental impact assessments were undertaken and describe the process and findings",
       "source": "Program Guide, Section 8.11.3",
@@ -226,13 +269,43 @@
       "scope": "meta"
     },
     {
-      "requirement_id": "REQ-023",
+      "requirement_id": "C06-REGISTRATION-ML-027",
       "category": "Safeguards",
       "requirement_text": "Public comment: Specify if community public consultation was undertaken during the project implementation and how comments were addressed",
       "source": "Program Guide, Section 8.11.4",
       "accepted_evidence": "Statements and documentation from public consultation process",
       "mandatory": true,
       "validation_type": "document_presence",
+      "scope": "meta"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-028",
+      "category": "Project Plan Deviations",
+      "requirement_text": "Project Plan deviations must provide evidence that the proposed deviation meets the conservativeness standards of the Credit Protocol",
+      "source": "Program Guide, Section 8.12.2",
+      "accepted_evidence": "Statement in the Project Plan of proposed deviation",
+      "mandatory": false,
+      "validation_type": "manual",
+      "scope": "meta"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-029",
+      "category": "Project Activity",
+      "requirement_text": "Demonstrate the project activity meets the approved activities for the credit class: regenerative crop management or managed grazing. Records detailing 5-years of historic project activity, which may include but is not limited to, cultivation types, drilling types, crop types, average annual yield per crop type and crop residue handling. For Aggregate Projects, each site must demonstrate compliance with this requirement",
+      "source": "Credit Class, Section 3.3",
+      "accepted_evidence": "Records detailing 5-years of historic project activity, which may include but is not limited to, cultivation types, drilling types, crop types, average annual yield per crop type and crop residue handling",
+      "mandatory": true,
+      "validation_type": "document_presence",
+      "scope": "farm"
+    },
+    {
+      "requirement_id": "C06-REGISTRATION-ML-030",
+      "category": "Monitoring Plan",
+      "requirement_text": "Provide a detailed plan for ongoing monitoring, including indicators, methods, and responsibilities",
+      "source": "Methodology, Section 4.1",
+      "accepted_evidence": "Monitoring schedules, soil sampling protocols, remote sensing details, and monitoring responsibility assignments",
+      "mandatory": true,
+      "validation_type": "manual",
       "scope": "meta"
     }
   ]

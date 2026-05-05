@@ -100,9 +100,21 @@ class Session(BaseModel):
 
 
 class Requirement(BaseModel):
-    """A single requirement from the checklist."""
+    """A single requirement from the checklist.
 
-    requirement_id: str = Field(pattern=r"^REQ-\d{3}$")
+    The ``requirement_id`` accepts two patterns:
+
+    * ``REQ-NNN`` — legacy v1 generic pattern, retained for backward
+      compatibility with existing session fixtures.
+    * ``CNN-AAA-LL-NNN`` — v2 protocol-locked pattern adopted from Becca's
+      official template (e.g. ``C06-REGISTRATION-ML-001``). The first
+      segment encodes the credit class, the second the workflow phase,
+      and the third the methodology level.
+    """
+
+    requirement_id: str = Field(
+        pattern=r"^(REQ-\d{3}|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3})$"
+    )
     category: str
     requirement_text: str
     source: str  # "Program Guide, Section X.Y"
@@ -125,6 +137,7 @@ class Checklist(BaseModel):
     version: str
     protocol: str
     program_guide_version: str
+    program_guide_url: str | None = None  # Canonical published methodology page
     requirements: list[Requirement]
 
 
@@ -165,7 +178,9 @@ class Document(BaseModel):
 class RequirementMapping(BaseModel):
     """Mapping between a requirement and supporting documents."""
 
-    requirement_id: str = Field(pattern=r"^REQ-\d{3}$")
+    requirement_id: str = Field(
+        pattern=r"^(REQ-\d{3}|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3})$"
+    )
     mapped_documents: list[str] = []  # List of document_ids
     mapping_status: Literal["suggested", "confirmed", "unmapped", "manual"] = "suggested"
     confidence: ConfidenceScore | None = None

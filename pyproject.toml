@@ -1,6 +1,6 @@
 [project]
 name = "registry-review-mcp"
-version = "2.5.0"
+version = "2.6.0"
 description = "MCP server for automating carbon credit project registry reviews"
 readme = "README.md"
 authors = [

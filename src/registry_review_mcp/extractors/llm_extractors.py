@@ -1114,8 +1114,12 @@ def extract_doc_id(source: str) -> str | None:
         "Project Plan, Section 1.8, Page 4" -> None
         "DOC-001, Page 5" -> "DOC-001"
         "REQ-002" -> "REQ-002"
+        "C06-REGISTRATION-ML-014" -> "C06-REGISTRATION-ML-014"
     """
-    match = re.search(r"(DOC-[A-Za-z0-9]+|REQ-\d+)", source)
+    match = re.search(
+        r"(DOC-[A-Za-z0-9]+|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3}|REQ-\d+)",
+        source,
+    )
     return match.group(1) if match else None
 
 

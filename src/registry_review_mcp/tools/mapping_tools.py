@@ -275,6 +275,13 @@ def _infer_document_types(category: str, accepted_evidence: str) -> list[str]:
 
     # Map requirement categories to classifier output labels.
     # Labels must match classify_document_by_filename() in document_tools.py.
+    #
+    # The keys cover both the legacy v1 categories ("GHG Accounting", "Risk
+    # Management") and Becca's v2 template categories
+    # ("Additionality", "Leakage", "Permanence Period", "Aggregate Project",
+    # "Project Activity", "Project Plan"). v2 split "GHG Accounting" into
+    # Additionality + Leakage + Permanence Period, so we route each piece to
+    # the same evidence types the v1 lookup did.
     type_mapping = {
         "land tenure": ["land_tenure", "spreadsheet_data", "project_plan"],
         "land eligibility": ["land_tenure", "spreadsheet_data", "project_plan"],
@@ -288,9 +295,15 @@ def _infer_document_types(category: str, accepted_evidence: str) -> list[str]:
         "project boundary": ["project_plan", "gis_shapefile"],
         "project ownership": ["project_plan", "land_tenure", "spreadsheet_data"],
         "project start date": ["project_plan"],
+        "project plan": ["project_plan"],
+        "project activity": ["project_plan", "monitoring_report", "spreadsheet_data"],
         "ecosystem type": ["project_plan", "baseline_report", "spreadsheet_data", "land_cover_map"],
         "crediting period": ["project_plan"],
+        "aggregate project": ["project_plan", "spreadsheet_data", "land_tenure"],
         "ghg accounting": ["project_plan", "ghg_emissions", "monitoring_report"],
+        "additionality": ["project_plan", "ghg_emissions", "baseline_report", "monitoring_report"],
+        "leakage": ["project_plan", "monitoring_report", "spreadsheet_data", "ghg_emissions"],
+        "permanence period": ["project_plan", "monitoring_report"],
         "regulatory compliance": ["project_plan"],
         "registration on other registries": ["project_plan"],
         "project plan deviations": ["project_plan"],
