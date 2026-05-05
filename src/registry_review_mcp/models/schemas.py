@@ -112,9 +112,7 @@ class Requirement(BaseModel):
       and the third the methodology level.
     """
 
-    requirement_id: str = Field(
-        pattern=r"^(REQ-\d{3}|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3})$"
-    )
+    requirement_id: str = Field(pattern=r"^(REQ-\d{3}|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3})$")
     category: str
     requirement_text: str
     source: str  # "Program Guide, Section X.Y"
@@ -178,9 +176,7 @@ class Document(BaseModel):
 class RequirementMapping(BaseModel):
     """Mapping between a requirement and supporting documents."""
 
-    requirement_id: str = Field(
-        pattern=r"^(REQ-\d{3}|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3})$"
-    )
+    requirement_id: str = Field(pattern=r"^(REQ-\d{3}|C\d{2}-[A-Z]+-[A-Z]{2}-\d{3})$")
     mapped_documents: list[str] = []  # List of document_ids
     mapping_status: Literal["suggested", "confirmed", "unmapped", "manual"] = "suggested"
     confidence: ConfidenceScore | None = None
