@@ -151,7 +151,7 @@
     {
       "requirement_id": "C06-REGISTRATION-ML-015",
       "category": "Crediting Period",
-      "requirement_text": "Stipulate the Crediting Period in the Project Plan. For this Credit Class the Crediting Period is 10 years, with the option to renew. In aggregated projects, sites may vary in their crediting period. Sites added after the project registration date must maintain a 10 year crediting period. Individual sites must define their own Project Start Date",
+      "requirement_text": "Stipulate the Crediting Period in the Project Plan. For this Credit Class the Crediting Period is 10 years, with the option to renew. In aggregated projects, sites may vary in their crediting period. Sites added after the project registration date must maintain a 10 year crediting period. Individual sites must define their own Crediting Period",
       "source": "Program Guide, Section 8.7.2; Credit Class, Section 3.7",
       "accepted_evidence": "Explicit definition of the Crediting Period in the Project Plan",
       "mandatory": true,

@@ -1,5 +1,6 @@
 """Session management tools for creating, loading, and updating review sessions."""
 
+import asyncio
 import logging
 import uuid
 from datetime import datetime, timezone
@@ -90,7 +91,10 @@ async def create_session(
     # Load checklist requirements count (filtered by scope if provided).
     # Also soft-validate the canonical methodology page URL so reviewers
     # know whether the published source has moved -- warning only, never
-    # aborts session creation.
+    # aborts session creation. The validator does a synchronous HEAD
+    # request with a 2s timeout, so we hand it off to a worker thread
+    # via asyncio.to_thread so the MCP event loop stays responsive while
+    # the network round-trip is in flight.
     requirements_count = 0
     program_guide_url: str | None = None
     program_guide_warning: str | None = None
@@ -98,7 +102,7 @@ async def create_session(
         checklist_data = load_checklist(methodology, scope)
         requirements_count = len(checklist_data.get("requirements", []))
         program_guide_url = checklist_data.get("program_guide_url")
-        program_guide_warning = validate_program_guide_url(program_guide_url)
+        program_guide_warning = await asyncio.to_thread(validate_program_guide_url, program_guide_url)
     except FileNotFoundError:
         pass
 
