@@ -122,9 +122,9 @@ class TestDataIntegrity:
 
     def test_checklist_structure(self):
         """Soil carbon checklist is valid."""
-        # Checklists are bundled inside the installed package so uvx/PyPI
-        # installs resolve correctly. Locate through the bundled data helper
-        # rather than the legacy repo-root path.
+        # Checklists are bundled inside the installed package so uvx installs
+        # resolve correctly. Locate through the bundled data helper rather
+        # than the legacy repo-root path.
         from registry_review_mcp.config.settings import _get_bundled_data_dir
 
         checklist_path = (

@@ -98,7 +98,7 @@ class Settings(BaseSettings):
     sessions_dir: Path = Field(default_factory=lambda: _get_xdg_data_home() / APP_NAME / "sessions")
     cache_dir: Path = Field(default_factory=lambda: _get_xdg_cache_home() / APP_NAME)
 
-    # Checklists are bundled inside the installed package so uvx/PyPI installs
+    # Checklists are bundled inside the installed package so uvx installs
     # resolve the correct path without requiring a source checkout.
     # Tests still override via conftest.py, preserving isolation.
     checklists_dir: Path = Field(default_factory=lambda: _get_bundled_data_dir() / "checklists")

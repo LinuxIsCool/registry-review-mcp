@@ -6,9 +6,8 @@ All notable changes to the Registry Review MCP Server are documented here.
 
 Phase F productionizes the pipeline: model swap away from the slow GPT-OSS
 endpoint, accepted-evidence schema-match gate for the over-scoring bias,
-CI/CD workflows, release workflow with PyPI trusted publishing, and a
-standalone HTML reviewer preview so humans can override verdicts without
-editing JSON.
+CI/CD workflows, and a standalone HTML reviewer preview so humans can
+override verdicts without editing JSON.
 
 ### Changed
 
@@ -50,12 +49,8 @@ editing JSON.
   PR to main; LLM response cache hydrated from `actions/cache@v4`.
 - **`.github/workflows/nightly.yml`** — cross-model full-matrix run
   at 03:00 PDT, per-model cache namespacing.
-- **`.github/workflows/release.yml`** — tag-push → fast suite → build
-  → PyPI trusted publishing → GitHub Release.
 - **`.pre-commit-config.yaml`** — ruff + fast suite locally before
   every commit.
-- **`docs/RELEASING.md`** — release checklist + PyPI trusted publishing
-  one-time setup + rollback guidance.
 - **`docs/CACHING.md`** — cache key semantics, invalidation patterns,
   CI integration, debugging recipes.
 - **`tests/test_prompt_tuning_calibration.py`** — 18 tests covering
@@ -349,15 +344,15 @@ deployments are unaffected.
 
 ## [2.1.0] - 2026-04-21
 
-Packaging and distribution fixes so `uvx registry-review-mcp` resolves bundled
-resources correctly without hand-patching cache environments.
+Packaging and distribution fixes so `uvx` resolves bundled resources
+correctly without hand-patching cache environments.
 
 ### Fixed
 - **[#2]** Checklists are now bundled inside the installed package at
   `registry_review_mcp/data/checklists/`. Previously `data/checklists/` sat at
   the repository root, so `_get_project_root()` resolved into site-packages
-  (never the repository) after a PyPI install and every new uvx archive
-  environment required manual population of its `lib/python3.13/data/checklists/`
+  (never the repository) after install and every new uvx archive environment
+  required manual population of its `lib/python3.13/data/checklists/`
   directory before `start_review` would succeed.
 - Default `checklists_dir` now derives from a new `_get_bundled_data_dir()`
   helper that walks from `config/settings.py` to the package root rather than

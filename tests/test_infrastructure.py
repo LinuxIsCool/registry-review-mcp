@@ -303,9 +303,9 @@ class TestChecklist:
     """Test checklist loading.
 
     Checklists are now bundled inside the installed package at
-    src/registry_review_mcp/data/checklists/ so they resolve correctly after a
-    PyPI install. Tests locate the file through the same bundled path rather
-    than the legacy repo-root data/ directory.
+    src/registry_review_mcp/data/checklists/ so they resolve correctly after
+    install. Tests locate the file through the same bundled path rather than
+    the legacy repo-root data/ directory.
     """
 
     @staticmethod

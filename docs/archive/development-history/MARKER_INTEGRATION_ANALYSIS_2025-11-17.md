@@ -416,12 +416,12 @@ gpu = [
 
 ### Standard (CPU):
 ```bash
-uv pip install registry-review-mcp
+uvx --from "git+ssh://git@github.com/regen-network/registry-review-mcp.git" registry-review-mcp
 ```
 
 ### With GPU acceleration (recommended for large document sets):
 ```bash
-uv pip install registry-review-mcp[gpu]
+uvx --from "git+ssh://git@github.com/regen-network/registry-review-mcp.git[gpu]" registry-review-mcp
 ```
 
 ### System Requirements:
@@ -851,8 +851,8 @@ class TestMarkerQuality:
 
 **Installation:**
 ```bash
-# Standard installation (includes marker)
-uv pip install registry-review-mcp
+# Standard installation (includes marker) — install from the regen-network git repo
+uvx --from "git+ssh://git@github.com/regen-network/registry-review-mcp.git" registry-review-mcp
 
 # First PDF conversion will download models (~1GB, one-time)
 # Subsequent conversions use cached models
